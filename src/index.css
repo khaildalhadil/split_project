@@ -1,13 +1,147 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  color: #444;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content_all_comp {
+  width: 1000px;
+  margin: 150px auto;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 25px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  display: flex;
+  /* width: 300px; */
+  align-items: center;
+}
+
+.card img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.center_text {
+  margin-right: 90px;
+  margin-left: 25px;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card button,
+.toggle_btn {
+  font-size: 18px;
+  font-weight: bold;
+  background-color:#ff8325c2;
+  color: #333;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+}
+
+.add_meanu {
+  grid-area: 2;
+  font-weight: bold;
+}
+
+.add_div {
+  background-color: #ffe6d3;
+  padding: 20px;
+  letter-spacing: .5px;
+  border-radius: 10px;
+}
+
+.add_div div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add_div div p {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.add_div div input {
+  /* padding: 5px 20px; */
+  height: 35px;
+  width: 200px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  font-size: 18px;
+  border: 1px solid #e5cfbd;
+}
+
+.btn {
+  background-color:#ff8325c2;
+  border: none;
+  border-radius: 7px;
+  
+}
+
+.add_btn {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.toggle_btn {
+  display: block;
+  margin: 20px;
+  margin-left: auto;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pall {
+  background-color: #ffe6d3;
+  border-radius: 8px;
+  height: 60%;
+  grid-area: span 2;
+  padding: 20px 50px;
+  font-weight: bold;
+}
+
+.more_information div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.more_information div input, select {
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #e5cfbd;
+}
+
+.select {
+  width: 37%;
+  height: 35px;
+}
+
+.split_btn {
+  display: block;
+  margin-left: auto;
+  padding: 10px 25px;
+  width: 100%;
+  margin-top: 10px;
 }
