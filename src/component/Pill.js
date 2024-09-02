@@ -7,15 +7,15 @@ export default function Pill() {
       <div className="more_information" >
         <div>
           <p><span>💰</span> Bill value</p>
-          <input type="text" />
+          <input type="number" />
         </div>
         <div>
           <p><span>🧍🏻‍♀️</span> your expense</p>
-          <input type="text" />
+          <input type="number" />
         </div>
         <div>
           <p><span>👫</span> name expens</p>
-          <input type="text" />
+          <input type="number" />
         </div>
         <div>
           <p><span>🤑</span> Who is paying the bill? </p>
