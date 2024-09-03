@@ -5,15 +5,18 @@ export default function AddFriend({sendDataToParent}) {
   const [showList, setShowList] = useState(false)
   const [name, setName] = useState('')
   const [img, setImage] = useState('')
-  const [message, setMessage] = useState('')
+  
 
   function show() {
     setShowList(!showList)
   }
 
   function onAdd() {
-    sendDataToParent(name, img, message)
+    if (name === '' || img === '') return
+    sendDataToParent(name, img)
     setShowList(!showList)
+    setName('')
+    setImage('')
   }
 
   return (

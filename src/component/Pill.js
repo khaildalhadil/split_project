@@ -2,6 +2,7 @@
 
 export default function Pill() {
   return(
+    // {}
     <div className="pall" >
       <h1>split a bill with name</h1>
       <div className="more_information" >
