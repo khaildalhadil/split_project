@@ -25,11 +25,17 @@ body {
   align-items: center;
   padding: 10px;
   border-radius: 5px;
+  justify-content: space-between;
 }
 
 .card:hover {
   background-color: #e5cfbd6b;
 
+}
+
+.card_fac_text {
+  display: flex;
+  gap: 20px;
 }
 
 .card img {

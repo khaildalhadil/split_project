@@ -1,20 +1,20 @@
 import {useState} from 'react'
 
-export default function AddFriend({addItem}) {
+export default function AddFriend({sendDataToParent}) {
 
   const [showList, setShowList] = useState(false)
   const [name, setName] = useState('')
   const [img, setImage] = useState('')
-
+  const [message, setMessage] = useState('')
 
   function show() {
     setShowList(!showList)
   }
 
-  // function addItem() {
-  //   alert(`Name: ${name}: Img: ${img}`)
-  //   setShowList(!showList)
-  // }
+  function onAdd() {
+    sendDataToParent(name, img, message)
+    setShowList(!showList)
+  }
 
   return (
     <div className="add_meanu" >
@@ -36,11 +36,11 @@ export default function AddFriend({addItem}) {
             onChange={(e) => setImage(e.target.value)}
              />
         </div>
-        <button onClick={addItem} className=" btn add_btn" >Add</button>
+        <button onClick={onAdd} className=" btn add_btn" >Add</button>
       </div>
       }
 
-      <button onClick={() => show('a', 'b')} className=" btn toggle_btn" >{showList ? 'Close': 'Add Friend' }</button>
+      <button onClick={show} className=" btn toggle_btn" >{showList ? 'Close': 'Add Friend' }</button>
     </div>
   )
 }

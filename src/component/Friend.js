@@ -1,32 +1,26 @@
-import {useState} from 'react'
-
-export default function Friend () {
-
-  const [listOfItems, setListOfItems] = useState([])
-
-  // function sendDataToFriend() {
-  //   alert("Hi from Friend")
-  //   // 
-  //   // setListOfItems([...listOfItems, <Item />])
-  // }
+export default function Friend ({listOfItems}) {  
 
   return(
     <div className="cards" >
-      <Item />
+      {listOfItems.map(el => {
+        return <Item el={el} />
+      })
+    }
     </div>
   )
 }
 
-function Item({id}) {
+function Item({el}) {
   return (
-    <div className="card" key={id} >
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwrdc-Y9SPttKRZIc3uD7BLvFvV1fi5XzlQ&s" alt="face" />
-      <div className="center_text" >
-        <h3>Khalid</h3>
-        <span>You Own Clark 7$</span>
+    <div className="card"  >
+      <div className="card_fac_text" >
+        <img src={el.img} alt="face" />
+        <div className="center_text" >
+          <h3>{el.name}</h3>
+          <span>{`you and ${el.name} are even`}</span>
+        </div>
       </div>
-      <button 
-      >Select</button>
+      <button>Select</button>
     </div>
   )
 }
