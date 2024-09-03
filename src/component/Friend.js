@@ -3,7 +3,7 @@ export default function Friend ({listOfItems, handlnameClick}) {
     <div className="cards"  >
       <ul>
         {listOfItems.map(el => {
-          return <Item el={el} sendTarge tName={handlnameClick} key={el.id}  />
+          return <Item el={el} sendTargetName={handlnameClick} key={el.id}  />
           })
         }
       </ul>

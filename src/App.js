@@ -12,11 +12,12 @@ export default function App() {
     setListOfItems([...listOfItems, {name, img, id}])
   }
 
-  const [nameClicked, setNameClicked] = useState('')
+  // const [nameClicked, setNameClicked] = useState('')
 
   function handlNameClick(name) {
-    setNameClicked(name)
-    console.log(nameClicked)
+    // setNameClicked(name)
+    // console.log(nameClicked)
+    usesCliekSelect(name)
   }
 
   // https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg
@@ -26,7 +27,7 @@ export default function App() {
     <div className='content_all_comp' >
       <Friend listOfItems={listOfItems} handlnameClick={handlNameClick}  />
       <AddFriend sendDataToParent={handlFriendData} />
-      <Pall/>
+      <Pall usesCliekSelect={usesCliekSelect}/>
     </div>
   );
 }

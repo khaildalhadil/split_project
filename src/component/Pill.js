@@ -1,6 +1,10 @@
+import { useState } from "react"
 
 
 export default function Pill() {
+
+  const [useCliekedSelect, setUseCliekedSelect] = useState(false)
+  
   return(
     // {}
     <div className="pall" >
