@@ -5,7 +5,7 @@ body {
 }
 
 .content_all_comp {
-  width: 1000px;
+  width: 1100px;
   margin: 150px auto;
   display: grid;
   grid-template-columns: 1.5fr 2fr;
@@ -101,6 +101,14 @@ body {
   outline: none;
 }
 
+#read_only_input {
+  background-color: rgba(68, 68, 68, 0.109)
+}
+
+input:focus {
+  outline: none;
+}
+
 .btn {
   background-color:#ff8325c2;
   border: none;
@@ -159,4 +167,12 @@ button {
   padding: 10px 25px;
   width: 100%;
   margin-top: 10px;
+}
+
+.greenText {
+  color: rgba(13, 184, 13, 0.774);
+}
+
+.redText {
+  color: rgba(255, 0, 0, 0.722)
 }
