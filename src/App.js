@@ -7,18 +7,28 @@ export default function App() {
 
   const [listOfItems, setListOfItems] = useState([])
   const [nameClicked, setNameClicked] = useState('')
-  const [useCliekedSelect, setUseCliekedSelect] = useState(false)
-  const [message, setMessage] = useState('you and ali are even');
+  const [targetId, setTargetId] = useState()
+  const [useCliekedSelect, setUseCliekedSelect] = useState(false);
 
   function handlFriendData(name, img) {
     const id = listOfItems.length
-    setListOfItems([...listOfItems, {name, img, id, useCliekedSelect, message}])
+    setListOfItems([...listOfItems, {name, img, id, useCliekedSelect, message: `you and ${name} are even`}])
   }
 
   function handlNameClick(element) {
     setNameClicked(element.name)
     setListOfItems(listOfItems.map(el => el === element ? {...el, useCliekedSelect: !useCliekedSelect}: el));
     setUseCliekedSelect(!useCliekedSelect)
+    setTargetId(element.id);
+  }
+
+  function handleChangeTheMessage(messageFromPill) {
+    setListOfItems(listOfItems.map(el => el.id === targetId? {...el, message: messageFromPill}: el))
+  }
+
+  function closeUI() {
+    setUseCliekedSelect(!useCliekedSelect)
+    
   }
 
   // function newMessage(newMe, id) {
@@ -30,9 +40,14 @@ export default function App() {
 
   return (
     <div className='content_all_comp' >
-      <Friend listOfItems={listOfItems} handlnameClick={handlNameClick} message={message}/>
+      <Friend listOfItems={listOfItems} handlnameClick={handlNameClick} />
       <AddFriend sendDataToParent={handlFriendData}  />
-      <Pall onUserClick={useCliekedSelect} userName={nameClicked} />
+      <Pall 
+        onUserClick={useCliekedSelect} 
+        userName={nameClicked} 
+        changeTheMessage={handleChangeTheMessage}
+        closeUI={closeUI}
+      />
     </div>
   );
 }

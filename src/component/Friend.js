@@ -1,10 +1,10 @@
-export default function Friend ({listOfItems, handlnameClick, message}) {  
+export default function Friend ({listOfItems, handlnameClick}) {  
 
   return(
     <div className="cards"  >
       <ul>
         {listOfItems.map(el => {
-          return <Item el={el} sendTargetName={handlnameClick} key={el.id} message={message}/>
+          return <Item el={el} sendTargetName={handlnameClick} key={el.id}/>
           })
         }
       </ul>
@@ -12,7 +12,7 @@ export default function Friend ({listOfItems, handlnameClick, message}) {
   )
 }
 
-function Item({el, sendTargetName, message}) {
+function Item({el, sendTargetName}) {
 
   function showPill(name) {
     sendTargetName(name)
@@ -24,7 +24,7 @@ function Item({el, sendTargetName, message}) {
         <img src={el.img} alt="face" />
         <div className="center_text" >
           <h3>{el.name}</h3>
-          <span>{message}</span>
+          <span>{el.message}</span>
         </div>
       </div>
       <button

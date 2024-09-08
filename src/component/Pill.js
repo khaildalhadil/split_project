@@ -1,18 +1,19 @@
 import { useState } from "react"
 
-export default function Pill({onUserClick, userName}) {
+export default function Pill({onUserClick, userName, changeTheMessage, closeUI}) {
 
   const [totalPill, setTotalPil] = useState()
   const [expense, setExpense] = useState('')
   const [select, setSelect] = useState('you')
   // const [split, setSplit] = useState(0)
 
-  function splitPill(e) {
-    console.log(e.target)
-    //    select === 'you' ?
-    // newMessage(<p className="greenText">{userName} owens you {+totalPill - +expense}</p>):
-    // newMessage(<p className="redText">You Owens {userName}: {+totalPill - +expense}</p>);
-  //   setMessage(
+  function splitPill() {
+    select === 'you' ?
+      changeTheMessage(<span className="greenText">{userName} owens you {+totalPill - +expense}</span>):
+      changeTheMessage(<span className="redText"> You Owens {userName}: {+totalPill - +expense}</span>);
+    setTotalPil('');
+    setExpense('');
+    closeUI()
   }
 
   return(
