@@ -12,7 +12,7 @@ export default function App() {
 
   function handlFriendData(name, img) {
     const id = listOfItems.length
-    setListOfItems([...listOfItems, {name, img, id, useCliekedSelect, message: `you and ${name} are even`}])
+    setListOfItems([...listOfItems, {name, img, id, useCliekedSelect, message: ` انت و ${name} متساويين`}])
   }
 
   function handlNameClick(element) {

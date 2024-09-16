@@ -23,26 +23,26 @@ export default function AddFriend({sendDataToParent}) {
       {showList &&
       <div className="add_div" >
         <div className="friend_name" >
-          <p><span>👩🏻‍🤝‍👩🏻</span>Friend name: </p>
           <input 
             value={name} 
             onChange={(e) => setName(e.target.value)} 
             type="text" />
+          <p><span>👩🏻‍🤝‍👩🏻</span>:اسم الصديق</p>
         </div>
 
         <div className="img" >
-          <p><span>📸</span>Image URL: </p>
           <input
             type="text"
             value={img}
             onChange={(e) => setImage(e.target.value)}
              />
+          <p><span>📸</span>:رابط الصوره</p>
         </div>
-        <button onClick={onAdd} className=" btn add_btn" >Add</button>
+        <button onClick={onAdd} className=" btn add_btn" >اضافة</button>
       </div>
       }
 
-      <button onClick={show} className=" btn toggle_btn" >{showList ? 'Close': 'Add Friend' }</button>
+      <button onClick={show} className=" btn toggle_btn" >{showList ? 'اغلاق': 'اضافه صديق' }</button>
     </div>
   )
 }

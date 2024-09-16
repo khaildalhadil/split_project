@@ -140,11 +140,13 @@ button {
   grid-area: span 2;
   padding: 20px 50px;
   font-weight: bold;
+  width: 90%;
 }
 
 .more_information div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .more_information div input, select {

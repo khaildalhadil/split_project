@@ -29,7 +29,7 @@ function Item({el, sendTargetName}) {
       </div>
       <button
         onClick={() => showPill(el)}>
-        {!el.useCliekedSelect? 'Select': 'Close'}
+        {!el.useCliekedSelect? 'اختيار': 'اغلاق'}
       </button>
     </li>
   )

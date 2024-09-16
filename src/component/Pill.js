@@ -9,8 +9,10 @@ export default function Pill({onUserClick, userName, changeTheMessage, closeUI})
 
   function splitPill() {
     select === 'you' ?
-      changeTheMessage(<span className="greenText">{userName} owens you {+totalPill - +expense}</span>):
-      changeTheMessage(<span className="redText"> You Owens {userName}: {+totalPill - +expense}</span>);
+    // {userName} owens you 
+      changeTheMessage(<span className="greenText">{userName} لازم يعطيك {+totalPill - +expense} </span>):
+      changeTheMessage(<span className="redText"> {userName} لازم تعطيه {+totalPill - +expense}  </span>);
+      // changeTheMessage(<span className="redText"> You Owens {userName}: {+totalPill - +expense}</span>);
     setTotalPil('');
     setExpense('');
     closeUI()
@@ -20,49 +22,51 @@ export default function Pill({onUserClick, userName, changeTheMessage, closeUI})
     <div>
       {onUserClick && 
       <div className="pall" >
-        <h1>split a bill with {userName}</h1>
+        <h1
+          style={{direction: "rtl"}}
+          >تقسيم الفاتوره انت و {userName}</h1>
         <div className="more_information" >
           <div>
-            <p><span>💰</span> Bill value</p>
             <input 
               type="number"
               value={totalPill}
               onChange={(e) => setTotalPil(e.target.value)}
             />
+            <p><span>💰</span> قيمه الفاتوره</p>
           </div>
           <div>
-            <p><span>🧍🏻‍♀️</span> your expense</p>
             <input 
               type="number"
               value={expense}
               onChange={(e) => setExpense(e.target.value)}
             />
+            <p><span>🧍🏻‍♀️</span> كم انت بتدفع</p>
           </div>
           <div>
-            <p><span>👫</span> name expens</p>
             <input 
               type="number"
               readOnly
               id="read_only_input"
               value={+totalPill - +expense}
             />
+            <p><span>👫</span> لازم يدفع  {userName}</p>
           </div>
           <div>
-            <p><span>🤑</span> Who is paying the bill? </p>
             <select 
              className="select"
              value={select}
              onChange={e => setSelect(e.target.value)}
             >
-              <option value='you' >You</option>
+              <option value='you' >انا</option>
               <option value={userName} >{userName}</option>
             </select>
+            <p><span>🤑</span> من بيدفع</p>
           </div>
           <div>
             <button 
               className="btn split_btn"
               onClick={splitPill}
-              >Split bill</button>
+              >تقسييم الفاتوره</button>
           </div>
         </div>
       </div>
